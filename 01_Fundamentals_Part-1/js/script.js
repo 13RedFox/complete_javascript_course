@@ -104,3 +104,59 @@ console.log('----< script.js >----');
 
 // const markHeherBMI = BMIMark > BMIJhon;
 // console.log(markHeherBMI);
+
+// 017 => String and Template Literals.
+
+// const firstName = 'John';
+// const job = 'teacher';
+// const birthYear = 1991;
+// const year = 2037;
+
+// const jhon = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+// console.log(jhon);
+
+// const jhonNew = `I'm  ${firstName}, a ${year - birthYear} year old ${job}!`;
+// console.log(jhonNew);
+
+// 018 => Talking Decisions if else Statements.
+
+// const age = 15;
+
+// if (age >= 18) {
+//   console.log(`Sarah can start driving license 🏎️`);
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(`Sarah is too young. Wait another ${yearsLeft} years 😉`);
+// }
+
+// const birthYear = 1991;
+// let century;
+
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+
+// console.log(century);
+
+// 019 => Coding Challenge #2.
+
+// const massMark = 78;
+// const heightMark = 1.69;
+// const massJhon = 92;
+// const heightJhon = 1.95;
+
+// const massMark = 95;
+// const heightMark = 1.88;
+// const massJhon = 85;
+// const heightJhon = 1.76;
+
+// const BMIMark = (massMark / heightMark ** 2).toFixed(1);
+// const BMIJhon = (massJhon / heightJhon ** 2).toFixed(1);
+
+// if (BMIMark > BMIJhon) {
+//   console.log(`Mark's BMI (${BMIMark}) is higher than Jhon's (${BMIJhon})`);
+// } else {
+//   console.log(`Jhon's BMI (${BMIMark}) is higher than Mark's (${BMIJhon})`);
+// }
