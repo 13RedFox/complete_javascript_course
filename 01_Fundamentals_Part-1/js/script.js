@@ -160,3 +160,106 @@ console.log('----< script.js >----');
 // } else {
 //   console.log(`Jhon's BMI (${BMIMark}) is higher than Mark's (${BMIJhon})`);
 // }
+
+// 020 => Type Conversion and Coercion.
+
+// type conversion
+// const inputYear = '1991';
+// console.log(Number(inputYear));
+// console.log(inputYear + 18);
+
+// type coercion
+// console.log('I am ' + 23 + ' years old'); // convert to string
+// console.log('23' - '10' - 3); // convert to number
+// console.log('23' * '2'); // convert to number ( * and / )
+
+// let n = '1' + 1; // '11'
+// n = n - 1; // 10
+// console.log(n);
+
+// 021 => Truthy and Falsy Values.
+
+// 5 falsy values: 0, '', undefined, null, NaN.
+
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonas'));
+// console.log(Boolean({}));
+
+// const money = 0;
+
+// if (money) {
+//   console.log(`Don't spend it all 😉`);
+// } else {
+//   console.log(`You should get a job!`);
+// }
+
+// let height;
+
+// if (height) {
+//   console.log('YAY! Height is defined');
+// } else {
+//   console.log('Height is UNDEFINED');
+// }
+
+// 022 => Equality Operators == vs ===.
+
+// const age = 18;
+
+// if (age === 18) console.log('You just became an adult');
+
+// const favorite = Number(prompt("What's your favorite number?", ''));
+// console.log(favorite);
+// console.log(typeof favorite);
+
+// if (favorite === 23) {
+//   console.log('Cool! 23 is an amazing number!');
+// } else if (favorite === 7) {
+//   console.log('7 is also a cool number.');
+// } else {
+//   console.log('Number is not 23 or 7');
+// }
+
+// if (favorite !== 23) console.log('Why not 23?');
+
+// 024 => Logical Operators.
+
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(hasDriversLicense && hasGoodVision); // true
+// console.log(!hasDriversLicense); // false
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive...');
+// }
+
+// const isTired = true; // C
+// console.log((hasDriversLicense && hasGoodVision) || isTired); // true
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log('Sarah is able to drive!');
+// } else {
+//   console.log('Someone else should drive...');
+// }
+
+// 025 => Coding Challenge #3.
+
+// const teamDolphins = (97 + 112 + 101) / 3;
+// const teamKoalas = (79 + 95 + 106) / 3;
+
+// console.log(teamDolphins, teamKoalas);
+
+// if ((teamDolphins >= 100 || teamKoalas >= 100) && teamDolphins > teamKoalas) {
+//   console.log('Winner Dolphin');
+// } else if ((teamDolphins >= 100 || teamKoalas >= 100) && teamKoalas > teamDolphins) {
+//   console.log('Winner Koalas');
+// } else if (teamDolphins >= 100 && teamKoalas >= 100 && teamDolphins === teamKoalas) {
+//   console.log('Winner two teams');
+// } else {
+//   console.log('Two team loose this chempionate');
+// }
