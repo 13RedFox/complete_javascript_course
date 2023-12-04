@@ -263,3 +263,46 @@ console.log('----< script.js >----');
 // } else {
 //   console.log('Two team loose this chempionate');
 // }
+
+// 026 => The switch Statement.
+
+// const day = 'monday';
+
+// switch (day) {
+//   case 'monday':
+//     console.log('Plan course structure');
+//     break;
+//   case 'tuesday':
+//     console.log('Prepare theory videos');
+//     break;
+//   case 'wednesday':
+//   case 'thursday':
+//     console.log('Write code examples');
+//     break;
+//   case 'friday':
+//     console.log('Record videos');
+//     break;
+//   case 'saturday':
+//   case 'sunday':
+//     console.log('Enjoy the weekend');
+//     break;
+//   default:
+//     console.log('Not a valid day!');
+// }
+
+// 028 => The Conditional Ternary Operator.
+
+// const age = 23;
+
+// age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water');
+
+// const drink = age >= 18 ? 'wine 🍷' : 'water';
+// console.log(drink);
+
+// console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water'}`);
+
+// 029 => Coding Challenge #4.
+// const bill = 275;
+// const tip = bill >=50 && bill <= 300 ? bill * 15 / 100 : bill * 20 / 100
+
+// console.log(`The bill was ${bill} and tip was ${tip}, and the total value ${bill + tip}`);
