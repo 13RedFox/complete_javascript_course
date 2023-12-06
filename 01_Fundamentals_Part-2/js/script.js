@@ -119,4 +119,61 @@ console.log(friends.includes('Peter')); // true (return true or false) Пров�
 if (friends.includes('Peter')) {
   console.log('You have a friend called Peter');
 }
+
+const jonas = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friend: ['Michael', 'Steven', 'Peter'],
+};
+
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas['firstName']);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+// const intrestingIn = prompt(
+//   'What do you want to know about Jonas? Choose between firstName, lastName, age, job, friends',
+// );
+
+// if (jonas[intrestingIn]) {
+//   console.log(jonas[intrestingIn]);
+// } else {
+//   console.log('Wrong request! Choose between firstName, lastName, age, job, friends');
+// }
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@example';
+
+console.log(jonas);
+console.log(
+  `${jonas.firstName} has ${jonas.friend.length}, and his best friend is called ${jonas.friend[0]}`,
+);
+
+const jonas = {
+  firstName: 'John',
+  lastName: 'Doe',
+  birthYear: 1991,
+  job: 'teacher',
+  friend: ['Michael', 'Steven', 'Peter'],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${
+      this.hasDriversLicense ? 'a' : 'no'
+    } driver's license`;
+  },
+};
+
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
+console.log(jonas.getSummary());
 */
