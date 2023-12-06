@@ -176,4 +176,35 @@ const jonas = {
 // console.log(jonas.calcAge());
 // console.log(jonas.age);
 console.log(jonas.getSummary());
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️`);
+// }
+
+const years = [1991, 2002, 2008, 2013, 2018, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`Starting ex... ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Rep...${rep}`);
+  }
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+
+  if (dice === 6) console.log('Loop is about to end...');
+}
 */
