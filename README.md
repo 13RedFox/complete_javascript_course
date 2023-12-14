@@ -5,3 +5,4 @@
 - Guess my number 🎮 - [✔️](https://github.com/13RedFox/complete_javascript_course/tree/main/05_Guess-My-Number)
 - Modal - [✔️](https://github.com/13RedFox/complete_javascript_course/tree/main/06_Modal)
 - Pig game 🎮 - [✔️](https://github.com/13RedFox/complete_javascript_course/tree/main/07_Pig-Game)
+- Behind the scenes - [✔️](https://github.com/13RedFox/complete_javascript_course/tree/main/08_Behind-the-Scenes)
