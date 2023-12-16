@@ -37,10 +37,81 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`,
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`,
+    );
+  },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 /*
 
+// * 1) Destructuring:
+// ! SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// ! REST, because on LEFT side of =
+const [a, b, ...other] = [1, 2, 3, 4, 5];
+
+console.log(a, b, other);
+
+// Objects:
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// * 2) Functions:
+
+const add = function (...numbers) {
+  let sum = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(2, 4, 5, 3, 7, 6, 12, 7, 9);
+
+const x = [34, 55, 123, 4];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+
+const arr = [7, 8, 9];
+const newArray = [1, 2, ...arr];
+console.log(newArray);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array:
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays:
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// ! Iterables: arrays, strings, maps, sets. NOT objects.
+const str = 'Jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+
+const ingredients = ['a', 'b', 'c'];
+
+restaurant.orderPasta(...ingredients);
+
+// Objects:
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+
+// Destructuring Objects:
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
