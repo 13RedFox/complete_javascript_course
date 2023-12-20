@@ -49,6 +49,117 @@ const restaurant = {
 
 /* 
 
+// Working With Strings: - Part - 3.
+
+console.log('a+very+nice+string'.split('+')); // => [ 'a', 'very', 'nice', 'string' ]
+const [firstName, lastName] = 'John Doe'.split(' ');
+console.log(firstName, lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // => 'Mr. John DOE'
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    // namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica an smith davis'); // => 'Jessica An Smith Davis'
+capitalizeName('john doe'); // => John Doe
+
+// Padding
+
+const maskCreditCard = function (number) {
+  const str = String(number);
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+// console.log(maskCreditCard(372642738326784)); // => '***********6784'
+// console.log(maskCreditCard('372642738326784'));
+
+// Repeat:
+const message2 = 'Bad weather... All Departues Delayed... ';
+console.log(message2.repeat(2));
+
+// Working With Strings: - Part - 2.
+
+const airline = 'TAP Air Portugal';
+
+airline.toLowerCase(); // tap air...
+airline.toUpperCase(); // TAP AIR...
+
+// Fix capitalization name:
+const passenger = 'jOnAS'; // Jonas
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect); // 'Jonas
+
+// Comparing emails:
+const email = 'hello@example.com';
+const loginEmail = 'Hello@Example.CoM';
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// Replacing:
+const priceGB = '288,97#';
+const priceUS = priceGB.replace('#', '$').replace(',', '.');
+console.log(priceUS);
+
+// Boolean:
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320')); // => true or false
+console.log(plane.startsWith('Boing')); // => true or false
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log(`Part of the NEW Airbus family`);
+}
+
+// Practice exercise:
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
+// Working With Strings: - Part - 1.
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat');
+  } else {
+    console.log('You got lucky');
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
