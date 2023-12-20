@@ -94,7 +94,6 @@ for (const [team, val] of Object.entries(game.odds)) {
   console.log(`Odd of victory ${game?.[team] ?? 'draw'}: ${val}`);
 }
 
-*/
 
 // Challenge #3:
 
@@ -128,3 +127,30 @@ average, every ${90 / gameEvents.size} minutes`);
 for (const [key, val] of gameEvents) {
   console.log(`[${key < 45 ? 'FIRST' : 'SECOND'} HALF]: ${key}: ${val}`);
 }
+
+*/
+
+// Challenge #4:
+
+const fn = function (val) {
+  const rows = val.trim().toLowerCase().trim().split('\n');
+
+  for (let i = 0; i < rows.length; i++) {
+    const [first, second] = rows[i].split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase(),
+    )}`;
+    console.log(`${output.padEnd(20)} ${'✅'.repeat(i + 1)}`);
+  }
+};
+
+fn(
+  `underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+`,
+);
