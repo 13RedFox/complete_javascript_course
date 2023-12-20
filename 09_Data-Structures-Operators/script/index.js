@@ -49,6 +49,22 @@ const restaurant = {
 
 /* 
 
+const getCode = (str) => str.toUpperCase().slice(0, 3);
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
+    '_',
+    ' ',
+  )} ${getCode(from)} to ${getCode(to)} (${time.replace(':', 'h')})`.padStart(
+    39,
+  );
+
+  console.log(output);
+}
+
+
 // Working With Strings: - Part - 3.
 
 console.log('a+very+nice+string'.split('+')); // => [ 'a', 'very', 'nice', 'string' ]
