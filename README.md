@@ -6,3 +6,4 @@
 - Modal - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/06_Modal)
 - Pig game 🎮 - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/07_Pig-Game)
 - Behind the scenes - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/08_Behind-the-Scenes)
+- Data structures, Modern operators and string - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/09_Data-Structures-Operators)
