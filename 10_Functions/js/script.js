@@ -138,5 +138,43 @@ book.apply(swiss, fligthData);
 
 book.call(swiss, ...fligthData);
 
-console.log(swiss);
+// Bind method:
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+
+bookEW23('Alex Smith');
+bookEW23('Martha Cooper');
+
+// With Event Listeners:
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  this.planes++;
+  console.log(this.planes);
+};
+
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application:
+const addTax = (rate, val) => val + val * rate;
+// console.log(addTax(0.1, 200)); // 220
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = (rate, val) => val + val * 0.23;
+// console.log(addVAT(100)); // 123
+
+const addTaxRate = function(rate) {
+  return function(val) {
+    return val + val * rate;
+  }
+}
+
+const addVAT2 = addTaxRate(0.23);
+// console.log(addVAT2(100)); // 123
 */
