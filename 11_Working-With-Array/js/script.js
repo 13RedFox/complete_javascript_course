@@ -59,10 +59,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
-  movements.forEach(function (mov, i) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
     const html = `
@@ -168,6 +170,22 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+// LOAN:
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov >= amount * 0.1)
+  ) {
+    currentAccount.movements.push(amount);
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 // CLOSE ACCOUNT:
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
@@ -186,42 +204,74 @@ btnClose.addEventListener('click', function (e) {
   inputCloseUsername.value = inputClosePin.value = '';
 });
 
+// SORT:
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
+////////////////////////////////////////////////
+// Array Methods Practice:
+//
+// 1.
+//
+// const bankDepositSum = accounts
+//   .flatMap((acc) => acc.movements)
+//   .filter((mov) => mov > 0)
+//   .reduce((acc, mov) => acc + mov, 0);
+//
+// console.log(bankDepositSum); // 25180;
+//
+// 2.
+// const numDeposits1000 = accounts
+//   .flatMap((acc) => acc.movements)
+//   .filter((mon) => mon >= 1000).length;
+//
+// const numDeposits1000 = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce((acc, cur) => (cur >= 1000 ? ++acc : acc), 0);
+//
+// console.log(numDeposits1000); // 6
+//
+// 3.
+// const { deposits, withdrawals } = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce(
+//     (acc, cur) => {
+//       // cur > 0 ? (acc.deposits += cur) : (acc.withdrawals += cur);
+//       acc[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+//       return acc;
+//     },
+//     { deposits: 0, withdrawals: 0 },
+//   );
+//
+// console.log(deposits, withdrawals); // {deposits: 25180, withdrawals: -7340}
+//
+// 4.
+// // this is a nice title => This Is a Nice Title
+// const convertTitleCase = function (title) {
+//   const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+//
+//   const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'in', 'with'];
+//
+//   const titleCase = title
+//     .toLowerCase()
+//     .split(' ')
+//     .map((word) => (exceptions.includes(word) ? word : capitalize(word)))
+//     .join(' ');
+//
+//   return capitalize(titleCase);
+// };
+//
+// console.log(convertTitleCase('this is a nice title'));
+// console.log(convertTitleCase('this is a LONG title but not too long'));
+// console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+////////////////////////////////////////////////
+
 /*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const arr = [23,33,233];
 
@@ -232,8 +282,8 @@ arr.slice(-1)[0] // 233 (old)
 arr.at(-1) // 233 (new)
 */
 
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 /*
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 for (const movement of movements) {
   if (movement > 0) {
@@ -273,3 +323,31 @@ const movementsUSD = movements.map((mov) => mov * eurToUsd);
 
 // console.log(movementsUSD);
 */
+
+// console.log(movements);
+// console.log(movements.includes(-130));
+
+// const anyDeposits = movements.some((mov) => mov > 1500);
+
+// console.log(anyDeposits);
+
+// const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+
+// console.log(arr.flat());
+
+// const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+
+// console.log(arrDeep.flat(2));
+
+// // .flat()
+// const overalBalance = accounts
+//   .map((acc) => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+// // .flatMap()
+// const overalBalance2 = accounts
+//   .flatMap((acc) => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance2);
