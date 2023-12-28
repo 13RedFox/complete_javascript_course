@@ -9,3 +9,4 @@
 - Data structures, Modern operators and string - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/09_Data-Structures-Operators)
 - A Closer Look at Functions - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/10_Functions)
 - Working With Array - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/11_Working-With-Array)
+- Numbers, Dates, Intl and Timers 🎮 - [✔️](https://github.com/LuckyFoxCode/complete_javascript_course/tree/main/12_Numbers-Dates-Timers-Bankist)
