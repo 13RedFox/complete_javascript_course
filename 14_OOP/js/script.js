@@ -11,7 +11,7 @@ const Person = function (firstName, birthYear) {
 };
 
 const jonas = new Person('John', 1991);
-console.log(jonas);
+// console.log(jonas);
 
 // 1. New {} is created
 // 2. function is called, this === {}
@@ -20,4 +20,12 @@ console.log(jonas);
 
 const matilda = new Person('Matilda', 2013);
 const jack = new Person('Jack', 2018);
-console.log(matilda, jack);
+// console.log(matilda, jack);
+
+// Prototypes:
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+jonas.calcAge();
+matilda.calcAge();
