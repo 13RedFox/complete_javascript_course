@@ -11,7 +11,6 @@ const Person = function (firstName, birthYear) {
 };
 
 const jonas = new Person('John', 1991);
-// console.log(jonas);
 
 // 1. New {} is created
 // 2. function is called, this === {}
@@ -20,7 +19,6 @@ const jonas = new Person('John', 1991);
 
 const matilda = new Person('Matilda', 2013);
 const jack = new Person('Jack', 2018);
-// console.log(matilda, jack);
 
 // Prototypes:
 Person.prototype.calcAge = function () {
@@ -29,3 +27,23 @@ Person.prototype.calcAge = function () {
 
 jonas.calcAge();
 matilda.calcAge();
+
+// Challenge #1.
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+const bmw = new Car('BMW', 100);
+const mercedes = new Car('Mercedes', 130);
+
+Car.prototype.accelerate = function () {
+  console.log(`${this.make} is going at ${this.speed + 10} km/h`);
+};
+
+Car.prototype.brake = function () {
+  console.log(`${this.make} is going at ${this.speed - 10} km/h`);
+};
+
+bmw.accelerate();
