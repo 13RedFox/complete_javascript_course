@@ -30,6 +30,7 @@ matilda.calcAge();
 
 // Challenge #1.
 
+/*
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -47,3 +48,60 @@ Car.prototype.brake = function () {
 };
 
 bmw.accelerate();
+*/
+
+// ES6 Classes:
+
+// class expression:
+// const PersonCl = class {};
+
+// class declaration:
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to prototype property.
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`); // Hey Jessica
+  }
+
+  // Static method:
+  static hey() {
+    console.log('Hey there...');
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1996);
+jessica.calcAge();
+
+// jessica.__proto__ === PersonCl.prototype
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`); // Hey Jessica
+// };
+jessica.greet();
+
+// 1. Classes are NOT hoisted.
+// 2. Class are first-class citizes.
+// 3. Classes are executed in strict mode.
+
+const account = {
+  owner: 'jonas',
+  movements: [200, 540, 310, 590],
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+// console.log(account.latest);
+account.latest = 50;
+// console.log(account.movements);
